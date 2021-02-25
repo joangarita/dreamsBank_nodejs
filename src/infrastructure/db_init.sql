@@ -30,7 +30,7 @@ CREATE UNIQUE INDEX document_index on users (document_type, document_number);
 CREATE TABLE  credentials(
     id INT AUTO_INCREMENT NOT NULL,
     user_id INT NOT NULL,
-    password binary(60),
+    password varchar(255),
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
     PRIMARY KEY (id),
@@ -100,7 +100,7 @@ CREATE TABLE transactions(
     id INT AUTO_INCREMENT NOT NULL,
     origin INT NOT NULL,
     destination INT NOT NULL,
-    value NUMERIC(18,2) NOT NULL,
+    amount NUMERIC(18,2) NOT NULL,
     status VARCHAR(10) NOT NULL,
     t_reference VARCHAR(100),
     additional_info VARCHAR(255),
@@ -154,28 +154,3 @@ CREATE TABLE product_requests(
     CONSTRAINT fk_request_status FOREIGN KEY (status) REFERENCES product_request_status(code),
     CONSTRAINT fk_requestor FOREIGN KEY (requestor) REFERENCES users(id)
 );
-
-
-/* Testing data*/
-
-INSERT INTO users(document_type,document_number, status_code, name) 
-VALUES('CC','12345','ACT','John Smith');
-
-INSERT INTO accounts(type,a_number, status, balance ) VALUES('CRNT','123-456','ACT', '500000');
-INSERT INTO accounts(type,a_number, status, balance ) VALUES('CRNT','123-457','ACT', '500000');
-INSERT INTO accounts(type,a_number, status, balance ) VALUES('CRNT','123-458','ACT', '500000');
-INSERT INTO accounts(type,a_number, status, balance ) VALUES('CRNT','123-459','ACT', '500000');
-
-INSERT INTO account_holding(holder,account) VALUES(1,3);
-INSERT INTO account_holding(holder,account) VALUES(1,4);
-INSERT INTO account_holding(holder,account) VALUES(1,5);
-INSERT INTO account_holding(holder,account) VALUES(1,6);
-
-INSERT INTO transactions(origin, destination, value, status, t_reference)
-VALUES (3,4,1000,'CMP','Rappi');
-INSERT INTO transactions(origin, destination, value, status, t_reference)
-VALUES (4,3,1000,'CMP','Rappi');
-INSERT INTO transactions(origin, destination, value, status, t_reference)
-VALUES (3,5,1000,'CMP','Rappi');
-
-INSERT INTO product_requests (product, status, requestor) VALUES (1, 'PND',1);
