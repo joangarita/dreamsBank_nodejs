@@ -9,32 +9,6 @@ import accountsRoutes from './routes/accounts.route';
 import credentialsRoute from './routes/credentials.route';
 import transactionsRoute from './routes/transactions.route';
 
-
-// export class App{
-    
-//     private app:express.Application;
-
-//     constructor(private port?: number | string){
-//         this.app = express();
-//         this.settings();
-//         this.middlewares = this.middlewares;
-//         this.routes();
-//     }
-//     settings() {
-//         this.app.set('port', this.port || process.env.PORT || 5000);
-//     }
-//     middlewares() {
-//         this.app.use(logger);
-//         this.app.use(express.json);
-//     }
-//     routes() {
-//         this.app.use('/accounts',accountsRoutes);
-//     }
-//     async listen() {
-//         await this.app.listen( this.app.get('port'));
-//         console.log( `server started at http://localhost:${ this.app.get('port') }` );
-//     }
-// }
 const PORT = process.env.PORT || 5000;
 const app: express.Application = express();
 //Middleware
