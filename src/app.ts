@@ -8,6 +8,7 @@ import cors from './middleware/cors.middleware';
 import accountsRoutes from './routes/accounts.route';
 import credentialsRoute from './routes/credentials.route';
 import transactionsRoute from './routes/transactions.route';
+import productsRoute from './routes/products.route';
 
 const PORT = process.env.PORT || 5000;
 const app: express.Application = express();
@@ -16,9 +17,10 @@ app.use(logger);
 app.use(cors);
 app.use(express.json());
 //Routes
-app.use('/', credentialsRoute);
 app.use('/accounts', accountsRoutes);
 app.use('/transactions', transactionsRoute);
+app.use('/products', productsRoute);
+app.use('/', credentialsRoute);
 
 
 //Not Found Error handling

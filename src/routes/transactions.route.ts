@@ -6,6 +6,7 @@ import {authorizeByAccount, authorizeByTransactionId} from '../middleware/author
 import { validateListTransactions, validateTransactionDetail, validateAverage } from '../middleware/validators/transactionsValidator.middleware';
 import { checkRequest } from '../middleware/validators/validateRequest.middleware';
 
+// Route to /transactions
 router.route('/average').get(
     validateAverage,
     checkRequest,

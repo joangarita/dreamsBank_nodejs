@@ -5,7 +5,7 @@ import { validateLogin } from '../middleware/validators/userValidator.middleware
 
 const router = Router();
 
-
+// Route to /
 router.post('/login',
     validateLogin,
     checkRequest,
