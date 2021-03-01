@@ -1,14 +1,7 @@
 import {Request, Response} from 'express';
-import {connect} from '../infrastructure/database'
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-
-async function getCredentials(documentType:string, documentNumber:string): Promise<any>{
-    const conn = await connect();
-    const credentials= await conn.query('SELECT * FROM credentials WHERE user_id = (SELECT id FROM users WHERE document_type = ? AND document_number = ?)'
-    ,[documentType, documentNumber]);
-    return JSON.parse(JSON.stringify(credentials[0]))[0];
-}
+import {getCredentials} from '../model/credentials.model';
 
 export async function validateCredentials(req: Request, res:Response):Promise<void>{
     getCredentials(req.body.document.type,req.body.document.number).then((credentials)=>{
