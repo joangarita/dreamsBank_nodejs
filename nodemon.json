@@ -1,0 +1,6 @@
+{
+    "env":{
+        "MYSQL_PWD": "portalito",
+        "JWT_KEY": "secret"
+    }
+}

@@ -21,7 +21,7 @@ app.use('/accounts', accountsRoutes);
 app.use('/transactions', transactionsRoute);
 
 
-//Error handling
+//Not Found Error handling
 app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     res.status(404).json({
         msg: 'Method not found'

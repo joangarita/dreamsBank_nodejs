@@ -22,11 +22,22 @@ INSERT INTO account_holding(holder,account) VALUES(1,5);
 INSERT INTO account_holding(holder,account) VALUES(1,6);
 INSERT INTO account_holding(holder,account) VALUES(2,3);
 
-INSERT INTO transactions(origin, destination, amount, status, t_reference)
-VALUES (3,4,1000,'CMP','Rappi');
-INSERT INTO transactions(origin, destination, amount, status, t_reference)
-VALUES (4,3,1000,'CMP','Rappi');
-INSERT INTO transactions(origin, destination, amount, status, t_reference)
-VALUES (3,5,1000,'CMP','Rappi');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (3,4,1000,'CMP','Rappi', '2021-02-25 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (3,4,1000,'CMP','Rappi', '2021-02-25 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (3,4,1000,'CMP','Rappi', '2021-02-25 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (4,3,500,'CMP','Rappi', '2021-02-25 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (4,3,500,'CMP','Rappi', '2021-02-25 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (5,6,500,'CMP','Rappi', '2021-02-25 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (5,6,500,'CMP','Rappi', '2021-02-26 06:30:18', '2021-02-25 06:30:20');
+INSERT INTO transactions(origin, destination, amount, status, t_reference, date_start, date_finished)
+VALUES (5,6,500,'CMP','Rappi', '2021-02-27 06:30:18', '2021-02-25 06:30:20');
+
 
 INSERT INTO product_requests (product, status, requestor) VALUES (1, 'PND',1);
