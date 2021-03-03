@@ -1,5 +1,5 @@
 import {Request, Response} from 'express';
-import {findAllByAccount, findById,findAverage} from '../model/transactions.model';
+import {findAllByAccount, findById,findAverage} from '../infrastructure/dao/transactions.dao';
 
 export async function getAllByAccount(req: Request, res:Response){
     const accountId:string = <string>req.query.accountId;

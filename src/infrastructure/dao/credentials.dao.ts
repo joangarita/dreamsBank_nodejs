@@ -1,4 +1,4 @@
-import {connect} from '../infrastructure/database';
+import {connect} from '../database';
 
 export async function getCredentials(documentType:string, documentNumber:string): Promise<any>{
     const conn = await connect();

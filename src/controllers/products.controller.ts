@@ -1,5 +1,5 @@
 import {Request, Response} from 'express';
-import { saveProductRequest } from '../model/products.model';
+import { saveProductRequest } from '../infrastructure/dao/products.dao';
 
 export async function createProductRequest(req: Request, res:Response){
     const userId: string = <string>req.body.token.userId;

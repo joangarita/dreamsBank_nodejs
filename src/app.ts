@@ -12,10 +12,12 @@ import productsRoute from './routes/products.route';
 
 const PORT = process.env.PORT || 5000;
 const app: express.Application = express();
+
 //Middleware
 app.use(logger);
 app.use(cors);
 app.use(express.json());
+
 //Routes
 app.use('/accounts', accountsRoutes);
 app.use('/transactions', transactionsRoute);

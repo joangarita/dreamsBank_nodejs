@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import {getCredentials} from '../model/credentials.model';
+import {getCredentials} from '../infrastructure/dao/credentials.dao';
 
 export async function validateCredentials(req: Request, res:Response):Promise<void>{
     getCredentials(req.body.document.type,req.body.document.number).then((credentials)=>{

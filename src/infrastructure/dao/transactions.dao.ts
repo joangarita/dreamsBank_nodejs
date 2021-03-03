@@ -1,4 +1,4 @@
-import {connect} from '../infrastructure/database';
+import {connect} from '../database';
 
 export async function findAllByAccount(accountId: string){
     const conn = await connect();

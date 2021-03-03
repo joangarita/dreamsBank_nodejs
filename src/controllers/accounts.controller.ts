@@ -1,8 +1,8 @@
 import {Request, Response} from 'express';
-import {findAll} from '../model/accounts.model';
+import accountsService from '../domain/services/accountsService';
 
 export async function getAll(req: Request, res:Response){
     const userId: string = <string>req.body.token.userId;
-    const accounts = await findAll(userId);
+    const accounts = await accountsService.listAccounts(userId);
     res.status(200).json(accounts);
 }

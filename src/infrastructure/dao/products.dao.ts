@@ -1,4 +1,4 @@
-import {connect} from '../infrastructure/database';
+import {connect} from '../database';
 
 export async function saveProductRequest(productId: string, userId:string):Promise<any>{
     const statusCode = 'PND'; // Default staus upon creation of a request
