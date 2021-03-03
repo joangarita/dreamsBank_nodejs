@@ -12,14 +12,6 @@ export class AccountsDao implements AccountsRepository{
         const accounts = await conn.query('SELECT * FROM accounts where id in (SELECT account FROM account_holding WHERE holder = ?)',[userId]);
         const parsedJson:any[] = JSON.parse(JSON.stringify(accounts[0]));
         let result:Account[] = [];
-        // for(let i:number = 0; i< parsedJson.length; i++){
-        //     result.push(new Account(
-        //         parsedJson[i].id,
-        //         new AccountType(parsedJson[i].account_type,'---'),
-        //         parsedJson[i].balance,
-        //         new AccountStatus(parsedJson[i].status,'---')
-        //         ));
-        // }
         parsedJson.forEach((value) => {
             result.push(this.accountJsonToAccount(value));
         })
