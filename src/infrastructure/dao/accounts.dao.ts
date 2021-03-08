@@ -15,7 +15,6 @@ export class AccountsDao implements AccountsRepository{
         parsedJson.forEach((value) => {
             result.push(this.accountJsonToAccount(value));
         })
-        
         return result;
     }
 

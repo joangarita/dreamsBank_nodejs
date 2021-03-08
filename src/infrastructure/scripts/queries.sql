@@ -1,4 +1,5 @@
 /* Queries used*/
+
 /* GET user password*/
 SELECT password FROM credentials WHERE user_id = (SELECT id FROM users WHERE document_type = @documentType AND document_number = @documentNumber);
 
